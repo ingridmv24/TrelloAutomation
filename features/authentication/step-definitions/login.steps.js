@@ -22,7 +22,6 @@ Given('enters {string} in the password field', async (userPassword) => {
 
 Given('the user clicks on the login button', async () => {
     await LoginPage.clickOnLoginButton();
-    //await browser.pause(20000);
 });
 
 When('the user clicks on the sign up button', async () => {

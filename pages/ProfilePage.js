@@ -4,7 +4,7 @@ class ProfilePage {
     get profileVisibilityOption() { return $("[data-testid='account-menu-profile']"); }
     get bioField() { return $('#bio'); }
     get saveButton() { return $("button[type='submit']"); }
-    get successMessage() { return $("//span[@class='QMKgZFIlTLiEJN']"); } //.QMKgZFIlTLiEJN
+    get successMessage() { return $("//span[@class='QMKgZFIlTLiEJN']"); }
 
     // Methods
     async openProfileSettings() {
