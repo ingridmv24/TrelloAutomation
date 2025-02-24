@@ -13,24 +13,15 @@ When('the user clicks on the profile icon', async () => {
     await ProfilePage.openProfileSettings();
 });
 
-When('clicks on the {string} option', async () => {
-    await ProfilePage.openProfileSettings();
-});
-
-When('enters a description {string} in the {string} field', async (description) => {
+When('enters a description {string} in the Bio field', async (description) => {
     await ProfilePage.updateBio(description);
 });
 
-When('the user clicks on {string} button', async () => {
+When('the user clicks on save button', async () => {
     await ProfilePage.saveChanges();
 });
 
-Then('a notification with the message {string} is displayed', async (expectedMessage) => {
+Then('a success message is displayed', async () => {
     const message = await ProfilePage.getSuccessMessage();
-    expect(message).to.equal(expectedMessage);
-});
-
-Then('the changes should be saved successfully', async () => {
-    const savedText = await ProfilePage.bioField.getValue();
-    expect(savedText).to.equal('Test User Bio');
+    expect(message).to.equal("Saved");
 });

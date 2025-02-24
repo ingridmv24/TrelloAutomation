@@ -1,10 +1,10 @@
 class ProfilePage {
     // Selectors
     get profileIcon() { return $("div[title*='account']"); }
-    get profileVisibilityOption() { return $('css-selector-del-opcion'); }
-    get bioField() { return $('css-selector-del-campo-bio'); }
-    get saveButton() { return $('css-selector-del-boton-save'); }
-    get successMessage() { return $('css-selector-del-mensaje-guardado'); }
+    get profileVisibilityOption() { return $("[data-testid='account-menu-profile']"); }
+    get bioField() { return $('#bio'); }
+    get saveButton() { return $("button[type='submit']"); }
+    get successMessage() { return $("//span[@class='QMKgZFIlTLiEJN']"); } //.QMKgZFIlTLiEJN
 
     // Methods
     async openProfileSettings() {
@@ -14,6 +14,7 @@ class ProfilePage {
     }
 
     async updateBio(description) {
+        await this.bioField.waitForDisplayed();
         await this.bioField.setValue(description);
     }
 
