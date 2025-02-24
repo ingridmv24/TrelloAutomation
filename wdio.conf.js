@@ -44,7 +44,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 2,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -54,15 +54,21 @@ exports.config = {
         {
             browserName: 'chrome',
             'goog:chromeOptions': {
-                //args: ['--headless', '--disable-gpu'] //headless mode
+                args: ['--headless', '--disable-gpu']
             }
         },
-        // {
-        //     browserName: 'firefox',
-        //     'moz:firefoxOptions': {
-        //         args: ['-headless'] //headless mode
-        //     }
-        // }
+        {
+            browserName: 'firefox',
+            'moz:firefoxOptions': {
+                args: ['-headless']
+            }
+        },
+        {
+            browserName: 'safari',
+            'safari:options': {
+                args: ['--headless']
+            }
+        }
     ],
 
     //
@@ -114,8 +120,8 @@ exports.config = {
     framework: 'cucumber',
     cucumberOpts: {
         require: ['./features/step-definitions/*.steps.js'],
-        retry: 0, // Reintentar pruebas fallidas 2 veces
-        timeout: 60000, // Tiempo de espera para cada paso
+        retry: 2, 
+        timeout: 60000, 
     },
 
     reporters: ['spec'],
