@@ -1,6 +1,6 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
-const LoginPage = require('../../../pages/LoginPage');
-const HomePage = require('../../../pages/HomePage');
+const LoginPage = require('../../pages/LoginPage');
+const HomePage = require('../../pages/HomePage');
 const { expect } = require('chai');
 
 Given('user navigates to the application', async () => {

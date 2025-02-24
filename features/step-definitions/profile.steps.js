@@ -1,13 +1,8 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
-const ProfilePage = require('../../../pages/ProfilePage');
-const LoginPage = require('../../../pages/LoginPage');
-const HomePage = require('../../../pages/HomePage');
+const ProfilePage = require('../../pages/ProfilePage');
+const LoginPage = require('../../pages/LoginPage');
+const HomePage = require('../../pages/HomePage');
 const { expect } = require('chai');
-
-Given('the user is logged in', async () => {
-    await LoginPage.login("testautomation270@gmail.com", "TestUser*");
-    await HomePage.waitForHomePage();
-});
 
 When('the user clicks on the profile icon', async () => {
     await ProfilePage.openProfileSettings();

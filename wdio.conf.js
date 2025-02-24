@@ -113,7 +113,7 @@ exports.config = {
     // Framework you want to run your specs with.
     framework: 'cucumber',
     cucumberOpts: {
-        require: ['./features/**/step-definitions/*.js'], // Ruta a los step definitions
+        require: ['./features/step-definitions/*.steps.js'],
         retry: 0, // Reintentar pruebas fallidas 2 veces
         timeout: 60000, // Tiempo de espera para cada paso
     },
