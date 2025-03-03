@@ -8,8 +8,15 @@ Given('the user is logged in', async () => {
     await HomePage.waitForHomePage();
 });
 
+
 After(async () => {
     console.log("Executing logout...");
-    await LogoutPage.logoutButton.isDisplayed();
-    await LogoutPage.logout();
+    
+    const isLogoutButtonDisplayed = await LogoutPage.logoutButton.isDisplayed();
+    if (isLogoutButtonDisplayed) {
+        await LogoutPage.logout();
+    }
+
+    await browser.reloadSession();
 });
+

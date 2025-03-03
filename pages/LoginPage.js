@@ -33,6 +33,7 @@ class LoginPage {
     }
 
     async getEmailErrorMessage(){
+        await this.emailError.isDisplayed();
         const errorElement = await this.emailError.getText();
         return errorElement;
     }

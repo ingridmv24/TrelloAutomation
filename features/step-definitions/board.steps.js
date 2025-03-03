@@ -4,7 +4,7 @@ const { expect } = require('chai');
 
 
 When('the user clicks on Create button', async () => {
-    await BoardPage.clickCreateButton();
+    await BoardPage.clickOnCreateButton();
 });
 
 When('clicks on Create board', async () => {
@@ -28,8 +28,8 @@ When('leaves the board name empty', async () => {
     await BoardPage.clearBoardTitle();
 });
 
-Then('an error message {string} should be displayed', async (errorMessage) => {
+Then('an {string} should be displayed', async (errorMessage) => {
     const errorText = await BoardPage.getErrorMessage();
-    const expectedErrorText = '👋Board title is required'
+    const expectedErrorText = 'Board title is required';
     expect(errorText).to.equal(expectedErrorText);
 });

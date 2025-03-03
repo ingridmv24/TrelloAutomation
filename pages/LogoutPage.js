@@ -1,4 +1,4 @@
-import ProfilePage from "./ProfilePage";
+const ProfilePage = require('./ProfilePage');
 
 class LogoutPage{
 

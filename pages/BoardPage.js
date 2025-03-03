@@ -1,14 +1,15 @@
 class BoardPage {
     // Selectors
-    get createButton() { return $('p.szBTSFrvPTLGHM'); }
+    get createButton() { return $("span[data-testid='AddIcon']"); }
     get createBoardOption() { return $("button[data-testid='header-create-board-button']"); }
     get boardTitleInput() { return $("input[data-testid='create-board-title-input']"); }
     get confirmCreateButton() { return $("button[data-testid='create-board-submit-button']"); }
     get boardTitleHeader() { return $("h1[data-testid='board-name-display']"); }
-    get errorMessage() { return $('div.lWu5grh2rIDIym'); }
+    get errorMessage() { return $('div.lWu5grh2rIDIym p'); }
 
-    // Methods
-    async clickCreateButton() {
+    // Methodscls
+    async clickOnCreateButton() {
+        await this.createButton.waitForDisplayed({ timeout: 10000 });
         await this.createButton.click();
     }
 
@@ -23,6 +24,7 @@ class BoardPage {
     }
 
     async clickConfirmCreateButton() {
+        await this.confirmCreateButton.waitForDisplayed({ timeout: 5000 });
         await this.confirmCreateButton.click();
     }
 
