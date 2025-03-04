@@ -8,7 +8,6 @@ Given('the user is logged in', async () => {
     await HomePage.waitForHomePage();
 });
 
-
 After(async () => {
     console.log("Executing logout...");
     

@@ -7,10 +7,9 @@ class BoardPage {
     get boardTitleHeader() { return $("h1[data-testid='board-name-display']"); }
     get errorMessage() { return $('div.lWu5grh2rIDIym p'); }
 
-    // Methodscls
+    // Methods
     async clickOnCreateButton() {
-        await this.createButton.waitForDisplayed({ timeout: 10000 });
-        await this.createButton.click();
+        await browser.execute("arguments[0].click();", await this.createButton);
     }
 
     async clickCreateBoardOption() {
