@@ -21,7 +21,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './features/**/*.feature'
+        './src/tests/features/**/*.feature'
         // ToDo: define location for spec files here
     ],
     // Patterns to exclude.
@@ -64,9 +64,9 @@ exports.config = {
             }
         },
         {
-            browserName: 'safari',
-            'safari:options': {
-                args: ['--headless', '--start-maximized']
+            browserName: 'MicrosoftEdge',
+            'ms:edgeOptions': {
+                args: ['--headless', '--disable-gpu', '--start-maximized']
             }
         }
     ],
@@ -118,7 +118,7 @@ exports.config = {
     // Framework you want to run your specs with.
     framework: 'cucumber',
     cucumberOpts: {
-        require: ['./features/step-definitions/*.steps.js'],
+        require: ['./src/tests/step-definitions/**/*.js'],
         retry: 2, 
         timeout: 60000, 
     },
