@@ -1,5 +1,5 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
-const BoardPage = require('../../pages/BoardPage');
+const BoardPage = require('../pages/BoardPage');
 const { expect } = require('chai');
 
 

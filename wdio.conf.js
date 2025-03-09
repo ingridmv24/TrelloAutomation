@@ -54,26 +54,22 @@ exports.config = {
         {
             browserName: 'chrome',
             'goog:chromeOptions': {
-                args: ['--headless', '--disable-gpu'],
-                args: ['--start-maximized']
+                args: ['--headless', '--disable-gpu', '--start-maximized']
             }
         },
         {
             browserName: 'firefox',
             'moz:firefoxOptions': {
-                args: ['-headless'],
-                args: ['--start-maximized']
+                args: ['-headless', '--start-maximized']
             }
         },
         {
             browserName: 'safari',
             'safari:options': {
-                args: ['--headless'],
-                args: ['--start-maximized']
+                args: ['--headless', '--start-maximized']
             }
         }
     ],
-
     //
     // ===================
     // Test Configurations
