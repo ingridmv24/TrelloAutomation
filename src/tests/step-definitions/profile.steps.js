@@ -1,5 +1,5 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
-const ProfilePage = require('../../pages/ProfilePage');
+const ProfilePage = require('.../../../pages/ProfilePage');
 const { expect } = require('chai');
 
 When('the user clicks on the profile icon', async () => {

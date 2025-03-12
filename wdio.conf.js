@@ -126,13 +126,12 @@ exports.config = {
     reporters: ['spec'],
 
     before: function (capabilities, specs) {
-        browser.maximizeWindow(); // Maximiza la ventana del navegador
+        browser.maximizeWindow(); 
     },
 
     afterTest: function (test, context, { error, result, duration, passed, retries }) {
-        // Código para ejecutar después de cada prueba
         if (error) {
-            browser.takeScreenshot(); // Capturar screenshot si la prueba falla
+            browser.takeScreenshot(); 
         }
     },
 
