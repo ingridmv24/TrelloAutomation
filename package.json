@@ -1,25 +1,19 @@
 {
-  "name": "taskmodulethree_trelloapp",
+  "name": "trelloapp_webdriverio",
+  "description": "pom with wdio",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "wdio": "wdio run ./wdio.conf.js"
+    "test": "wdio run src/config/wdio.conf.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ingrid Munera Valencia",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "@cucumber/cucumber": "^10.9.0",
-    "@wdio/cli": "^9.10.0",
-    "@wdio/cucumber-framework": "^9.11.0",
-    "@wdio/local-runner": "^9.10.0",
-    "@wdio/mocha-framework": "^9.9.0",
-    "@wdio/spec-reporter": "^9.9.0",
-    "chai": "^5.2.0",
-    "chromedriver": "^133.0.2",
-    "wdio-chromedriver-service": "^8.1.1",
-    "wdio-geckodriver-service": "^5.0.2"
+    "@wdio/cli": "^9.12.0",
+    "@wdio/local-runner": "^9.12.0",
+    "@wdio/mocha-framework": "^9.11.0",
+    "@wdio/spec-reporter": "^9.11.0"
   }
 }

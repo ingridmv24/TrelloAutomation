@@ -21,7 +21,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './src/tests/features/**/*.feature'
+        '../**/*.feature'
         // ToDo: define location for spec files here
     ],
     // Patterns to exclude.
@@ -54,21 +54,21 @@ exports.config = {
         {
             browserName: 'chrome',
             'goog:chromeOptions': {
-                args: ['--headless', '--disable-gpu', '--start-maximized']
+                args: ['--disable-gpu', '--start-maximized']
             }
         },
-        {
-            browserName: 'firefox',
-            'moz:firefoxOptions': {
-                args: ['-headless', '--start-maximized']
-            }
-        },
-        {
-            browserName: 'MicrosoftEdge',
-            'ms:edgeOptions': {
-                args: ['--headless', '--disable-gpu', '--start-maximized']
-            }
-        }
+        // {
+        //     browserName: 'firefox',
+        //     'moz:firefoxOptions': {
+        //         args: ['-headless', '--start-maximized']
+        //     }
+        // },
+        // {
+        //     browserName: 'MicrosoftEdge',
+        //     'ms:edgeOptions': {
+        //         args: ['--headless', '--disable-gpu', '--start-maximized']
+        //     }
+        // }
     ],
     //
     // ===================
@@ -118,8 +118,8 @@ exports.config = {
     // Framework you want to run your specs with.
     framework: 'cucumber',
     cucumberOpts: {
-        require: ['./src/tests/step-definitions/**/*.js'],
-        retry: 2, 
+        require: ['./**/*.step.js'],
+        retry: 0, 
         timeout: 60000, 
     },
 

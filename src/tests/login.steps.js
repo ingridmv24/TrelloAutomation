@@ -38,4 +38,3 @@ Then('the user should see an error message', async () => {
     const errorMessage = await LoginPage.getEmailErrorMessage();
     expect(errorMessage).to.equals('Please enter a valid email address');
 });
-
