@@ -114,11 +114,11 @@ exports.config = {
     connectionRetryCount: 3,
     //
     // Test runner services
-    services: ['chromedriver', 'geckodriver'],
+    // services: [],
     // Framework you want to run your specs with.
     framework: 'cucumber',
     cucumberOpts: {
-        require: ['./**/*.step.js'],
+        require: ['./**/*.tests.js'],
         retry: 0, 
         timeout: 60000, 
     },

@@ -12,7 +12,4 @@ class BoardComponent extends BaseComponent{
     get boardName(){
         return this.rootElement.$("h1[data-testid='board-name-display']");
     }
-    
-
-
 }
