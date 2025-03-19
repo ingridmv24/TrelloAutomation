@@ -18,7 +18,7 @@ class HeaderComponent extends BaseComponent{
         return this.rootElement.$("button[data-testid='header-create-menu-button']");
     }
 
-    get menuAvatarBtn(){
+    get menuMemberBtn(){
         return this.rootElement.$("[data-testid='header-member-menu-avatar']");
     }
 }
