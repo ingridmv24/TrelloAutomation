@@ -3,10 +3,9 @@ const { expect } = require('chai');
 const { pages } = require('../po')
 const testData = require('../../utils/testData');
 
-const { VALID_CREDENTIALS, INPUT_VALUES } = testData;
+const { VALID_CREDENTIALS, INPUT_VALUES, MESSAGES } = testData;
 let loginPage;
 let boardPage;
-let workSpacePage;
 
 loginPage = pages('login'); 
 boardPage = pages('board'); 
@@ -51,14 +50,14 @@ Then('the new board title should be displayed', async () => {
     expect(actualBoardName).to.equals(expectedBoardName);
 });
 
-// When('leaves the board name empty', async () => {
-//     await boardPage.clearBoardTitle();
-// });
+When('leaves the board name empty', async () => {
+    await boardPage.clearBoardTitle();
+});
 
-// Then('an {string} should be displayed', async (errorMessage) => {
-//     const errorText = await BoardPage.getErrorMessage();
-//     const expectedErrorText = 'Board title is required';
-//     expect(errorText).to.equal(expectedErrorText);
-// });
+Then('an {string} should be displayed', async (errorMessage) => {
+    const boardTitleValidarionText = await boardPage.extractBoardTitleValidation();
+    const expectedBoardTitleValidationText = testData.MESSAGES.boardTitleValidationMessage;
+    expect(boardTitleValidarionText).to.equal(expectedBoardTitleValidationText);
+});
 
 

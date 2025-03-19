@@ -16,4 +16,4 @@ Scenario: Create a board without a name
     When the user clicks on Create button
     And clicks on Create board
     And leaves the board name empty
-    Then an "error message" should be displayed
+    Then an "validation message" should be displayed

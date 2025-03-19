@@ -20,6 +20,10 @@ class BoardModalComponent extends BaseComponent {
     get boardTitleInput() {
         return this.rootElement.$("input[data-testid='create-board-title-input']");
     }
+
+    get boardTitleValidation(){
+        return this.rootElement.$("div.lWu5grh2rIDIym p");
+    }
 }
 
 module.exports = BoardModalComponent;

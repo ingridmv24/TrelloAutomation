@@ -7,7 +7,8 @@ const CONSTANTS = {
         email: "invaliduser@com"
     },
     MESSAGES: {
-        errorInvalidEmail: "Please enter a valid email address"
+        errorInvalidEmail: "Please enter a valid email address",
+        boardTitleValidationMessage: "Board title is required"
     },
     INPUT_VALUES: {
         boardTitle: "New board test"

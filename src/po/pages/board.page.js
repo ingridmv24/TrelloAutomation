@@ -24,6 +24,10 @@ class BoardPage extends BasePage{
         await this.createBoardModal.boardTitleInput.setValue(boardTitle);
     }
 
+    async clearBoardTitle() {
+        await this.createBoardModal.boardTitleInput.clearValue();
+    }
+
     async clickOnCreateBoardSubmitButton(){
         await this.createBoardModal.createBoardSubmitBtn.waitForDisplayed();
         await this.createBoardModal.createBoardSubmitBtn.click();
@@ -32,6 +36,11 @@ class BoardPage extends BasePage{
     async extractBoardTitleText(){
         const boardTitle = await this.workSpace.boardName.getText();
         return boardTitle;
+    }
+
+    async extractBoardTitleValidation(){
+        const boardTitleValidation = await this.createBoardModal.boardTitleValidation.getText();
+        return boardTitleValidation;
     }
 }
 module.exports = BoardPage;
