@@ -5,16 +5,20 @@ class BoardModalComponent extends BaseComponent {
         super("section[data-testid$='create-menu-popover']");
     }
 
-    get headerCreateBoardBtn() {
-        return this.rootElement.$("button[data-testid$='create-board-button']");
+    get headerCreateBtn() {
+        return $("[data-testid='header-create-menu-button']");
     }
 
-    get boardTitleInput() {
-        return this.rootElement.$("input[data-testid='create-board-title-input']");
+    get createBoardBtn() {
+        return this.rootElement.$("button[data-testid='header-create-board-button'] div[class='kgXqyT2weJmrQm']");
     }
 
     get createBoardSubmitBtn() {
         return this.rootElement.$("button[data-testid='create-board-submit-button']");
+    }
+
+    get boardTitleInput() {
+        return this.rootElement.$("input[data-testid='create-board-title-input']");
     }
 }
 

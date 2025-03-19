@@ -1,9 +1,11 @@
-const HomeWorkSpacePage = require('./../pages/home-workspace.page');
+const BoardPage = require('./../pages/board.page');
 const LoginPage = require('./../pages/login.page');
+const WorkSpacePage = require('./../pages/workspace.page');
 
 const pageInstances = {
-    homeworkspace: new HomeWorkSpacePage(),
-    login: new LoginPage()
+    board: new BoardPage(),
+    login: new LoginPage(),
+    workspace: new WorkSpacePage()
 };
 
 function pages(name) {

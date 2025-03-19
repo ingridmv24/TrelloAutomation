@@ -27,7 +27,7 @@ class LoginPage extends BasePage {
         await browser.waitUntil(
             async () => (await this.logIn.passwordInput.isDisplayed()),
             {
-                timeout: 5000, // Espera hasta 5 segundos
+                timeout: 5000,
                 timeoutMsg: "El campo de contraseña no apareció a tiempo"
             }
         );
