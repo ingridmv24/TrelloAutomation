@@ -10,7 +10,7 @@ Scenario: Successful Login
     And the user clicks on the continue button
     And enters "password" in the password field
     And the user clicks on the login button
-    Then the user should be redirected to the homepage
+    Then the user should be redirected to the board
 
 @unsuccessfulLogin
 Scenario: Unsuccessful Login with Invalid Credentials

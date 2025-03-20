@@ -1,14 +1,11 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework')
 const { expect } = require('chai');
 const { pages } = require('../po')
-const testData = require('../../utils/testData');
+const testData = require('./../utils/testData');
 
 const { VALID_CREDENTIALS, INVALID_CREDENTIALS, MESSAGES } = testData;
-let loginPage;
-let workSpacePage;
-
-loginPage = pages('login');
-workSpacePage = pages('workspace');
+let loginPage = pages('login');
+let workSpacePage = pages('workspace');
 
 Given('user navigates to the application', async () => {
 
@@ -22,13 +19,11 @@ Given('the user clicks on the login button in the header', async () => {
 
 Given('the user enters valid {string} in the email field', async (emailKey) => {
     const email = VALID_CREDENTIALS[emailKey]; 
-    console.log("Valid email used:", email);
     await loginPage.setEmail(email);
 });
 
 Given('the user enters invalid {string} in the email field', async (emailKey) => {
     const email = INVALID_CREDENTIALS[emailKey]; 
-    console.log("Invalid email used:", email);
     await loginPage.setEmail(email);
 });
 
@@ -49,7 +44,7 @@ When('the user clicks on the sign up button', async () => {
     await loginPage.clickOnSignUpButton();
 });
 
-Then('the user should be redirected to the homepage', async () => {
+Then('the user should be redirected to the board', async () => {
     await workSpacePage.waitForWorkSpaceTitle();
     const isTitleVisible = await workSpacePage.isUserLoggedIn();
     expect(isTitleVisible).to.be.true;

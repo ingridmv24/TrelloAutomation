@@ -6,15 +6,15 @@ class ProfileAndVisibilityComponent extends BaseComponent {
     }
 
     get userNameInput() {
-        return this.rootElement("#username");
+        return this.rootElement.$("#username");
     }
 
-    get bioInput() {
-        return this.rootElement("#bio");
+    get biographyInput() {
+        return this.rootElement.$("#bio");
     }
 
     get saveBtn() {
-        return this.rootElement("button[type='submit']");
+        return this.rootElement.$("button[type='submit']");
     }
 
     get alertInfoSaved() {

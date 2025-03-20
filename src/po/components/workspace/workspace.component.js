@@ -1,12 +1,17 @@
 const BaseComponent = require("../common/base.component");
 
-class HomeWorkSpaceComponent extends BaseComponent {
+class WorkspaceComponent extends BaseComponent {
     constructor() {
-        super(".board-main-content");
+        super(".home-container");
+    }
+
+    get workSpaceTitle(){
+        return this.rootElement.$('h2');
     }
 
     get boardName(){
-        return this.rootElement.$('[data-testid="board-name-display"]');
+        return $('[data-testid="board-name-display"]');
     }
+
 }
-module.exports = HomeWorkSpaceComponent;
+module.exports = WorkspaceComponent;

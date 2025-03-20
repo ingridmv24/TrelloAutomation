@@ -28,7 +28,7 @@ class LoginPage extends BasePage {
             async () => (await this.logIn.passwordInput.isDisplayed()),
             {
                 timeout: 5000,
-                timeoutMsg: "El campo de contraseña no apareció a tiempo"
+                timeoutMsg: "The input field dis not appear on time"
             }
         );
         await this.logIn.passwordInput.setValue(password);

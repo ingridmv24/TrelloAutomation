@@ -1,7 +1,7 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework')
 const { expect } = require('chai');
 const { pages } = require('../po')
-const testData = require('../../utils/testData');
+const testData = require('./../utils/testData');
 
 const { VALID_CREDENTIALS, INPUT_VALUES, MESSAGES } = testData;
 let loginPage;

@@ -8,10 +8,13 @@ const CONSTANTS = {
     },
     MESSAGES: {
         errorInvalidEmail: "Please enter a valid email address",
-        boardTitleValidationMessage: "Board title is required"
+        boardTitleValidationMessage: "Board title is required",
+        alertTextBioInfo: "Saved"
     },
     INPUT_VALUES: {
-        boardTitle: "New board test"
+        boardTitle: "New board test",
+        userName: "ingridmv1124",
+        bioDescription: "Hello, my name is Ingrid and I'm a tester!!"
     }
 };
 

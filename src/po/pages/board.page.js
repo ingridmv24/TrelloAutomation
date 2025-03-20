@@ -34,6 +34,7 @@ class BoardPage extends BasePage{
     }
 
     async extractBoardTitleText(){
+        await this.workSpace.boardName.waitForDisplayed();
         const boardTitle = await this.workSpace.boardName.getText();
         return boardTitle;
     }

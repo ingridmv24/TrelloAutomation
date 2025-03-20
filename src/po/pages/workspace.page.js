@@ -3,7 +3,7 @@ const { WorkSpace } = require('../components');
 
 class WorkSpacePage extends BasePage {
     constructor() {
-        super('/w/userworkspace45640014/home')
+        super()
         this.workspace = new WorkSpace();
     }
 

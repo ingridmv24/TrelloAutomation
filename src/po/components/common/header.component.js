@@ -2,12 +2,11 @@ const BaseComponent = require("./base.component");
 
 class HeaderComponent extends BaseComponent{
     constructor(){
-        //super("#header[data-testid='authenticated-header']");
-        super("div[class$='caTbTe']");
+        super("#header[data-testid='authenticated-header']");
     }
 
     get loginHeaderBtn(){
-        return this.rootElement.$("[data-uuid$='login']");
+        return $("[data-uuid$='login']");
     }
 
     get homeBtn(){
