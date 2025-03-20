@@ -4,7 +4,7 @@ Background:
     Given user navigates to the application
 
 @successfulLogin
-Scenario: Successful Login
+Scenario: Login with valid credentials
     And the user clicks on the login button in the header
     And the user enters valid "email" in the email field
     And the user clicks on the continue button
@@ -13,7 +13,7 @@ Scenario: Successful Login
     Then the user should be redirected to the board
 
 @unsuccessfulLogin
-Scenario: Unsuccessful Login with Invalid Credentials
+Scenario: Login with invalid credentials
     And the user clicks on the login button in the header
     And the user enters invalid "email" in the email field
     And the user clicks on the continue button
