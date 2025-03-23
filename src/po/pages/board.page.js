@@ -1,5 +1,5 @@
 const BasePage = require("./base.page");
-const { CreateBoardModal, WorkSpace } = require('./../components');
+const { CreateBoardModal, WorkSpace, Board } = require('./../components');
 
 
 class BoardPage extends BasePage{
@@ -7,6 +7,7 @@ class BoardPage extends BasePage{
         super()
         this.createBoardModal = new CreateBoardModal();
         this.workSpace = new WorkSpace();
+        this.board = new Board();
     }
 
     async clickOnCreateButton(){
@@ -42,6 +43,25 @@ class BoardPage extends BasePage{
     async extractBoardTitleValidation(){
         const boardTitleValidation = await this.createBoardModal.boardTitleValidation.getText();
         return boardTitleValidation;
+    }
+
+    async clickOnAddAnotherListButton(){
+        await this.board.addAnotherListBtn.click();
+    }
+
+    async enterListNameBoard(listName){
+        await this.board.listNameInput.setValue(listName);
+    }
+
+    async clickOnaddListButton(){
+        await this.board.addListBtn.click();
+    }
+
+    async extractNewListBoardTitle(){
+        const listBoardTitleElement = await this.board.newBoardListTitle;
+        listBoardTitleElement.waitForDisplayed();
+        listBoardTitleElement.getText();
+        return listBoardTitle;
     }
 }
 module.exports = BoardPage;
