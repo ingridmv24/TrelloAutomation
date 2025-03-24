@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const { pages } = require('../po')
 const testData = require('./../utils/testData');
 
-const { VALID_CREDENTIALS, INPUT_VALUES, MESSAGES } = testData;
+const { VALID_CREDENTIALS, TITLES_VALIDATION, MESSAGES } = testData;
 let loginPage;
 let boardPage;
 
@@ -36,7 +36,8 @@ When('clicks on Create board', async () => {
 });
 
 When('enters a board title {string} in the Board title input field', async (title) => {
-    const boardTitle = INPUT_VALUES.boardTitle;
+    //const boardTitle = INPUT_VALUES.boardTitle;
+    const boardTitle = title;
     await boardPage.setBoardTitle(boardTitle);
 });
 
@@ -46,7 +47,7 @@ When('clicks on the Create submit button', async () => {
 
 Then('the new board title should be displayed', async () => {
     const actualBoardName = await boardPage.extractBoardTitleText();
-    const expectedBoardName = testData.INPUT_VALUES.boardTitle;
+    const expectedBoardName = testData.TITLES_VALIDATION.boardTitle;
     expect(actualBoardName).to.equals(expectedBoardName);
 });
 
@@ -54,7 +55,7 @@ When('leaves the board name empty', async () => {
     await boardPage.clearBoardTitle();
 });
 
-Then('an {string} should be displayed', async (errorMessage) => {
+Then('an validation message should be displayed', async () => {
     const boardTitleValidarionText = await boardPage.extractBoardTitleValidation();
     const expectedBoardTitleValidationText = testData.MESSAGES.boardTitleValidationMessage;
     expect(boardTitleValidarionText).to.equal(expectedBoardTitleValidationText);

@@ -30,7 +30,7 @@ class BoardPage extends BasePage{
     }
 
     async clickOnCreateBoardSubmitButton(){
-        await this.createBoardModal.createBoardSubmitBtn.waitForDisplayed();
+        await this.createBoardModal.createBoardSubmitBtn.waitForDisplayed({ timeout: 10000 });
         await this.createBoardModal.createBoardSubmitBtn.click();
     }
 
@@ -58,10 +58,9 @@ class BoardPage extends BasePage{
     }
 
     async extractNewListBoardTitle(){
-        const listBoardTitleElement = await this.board.newBoardListTitle;
-        listBoardTitleElement.waitForDisplayed();
-        listBoardTitleElement.getText();
-        return listBoardTitle;
+        await this.board.newBoardListTitle.waitForDisplayed();
+        const listBoardTitleText = await this.board.newBoardListTitle.getText();
+        return listBoardTitleText;
     }
 }
 module.exports = BoardPage;

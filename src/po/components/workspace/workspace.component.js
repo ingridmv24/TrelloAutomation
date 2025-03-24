@@ -10,7 +10,7 @@ class WorkspaceComponent extends BaseComponent {
     }
 
     get boardName(){
-        return $('[data-testid="board-name-display"]');
+        return $('[data-testid="board-name-container"]');
     }
 
 }

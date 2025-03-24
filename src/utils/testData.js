@@ -12,9 +12,13 @@ const CONSTANTS = {
         alertTextBioInfo: "Saved"
     },
     INPUT_VALUES: {
-        boardTitle: "New board test",
         userName: "ingridmv1124",
-        bioDescription: "Hello, my name is Ingrid and I'm a tester!!"
+        bioDescription: "Hello, my name is Ingrid and I'm a tester!!",
+    },
+    TITLES_VALIDATION: {
+        boardTitle: "New board test",
+        boardListName: "new list board"
+
     }
 };
 

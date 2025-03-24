@@ -26,7 +26,7 @@ class BoardComponent extends BaseComponent{
     }
 
     get newBoardListTitle(){
-        return this.rootElement.$("#board li[data-testid='list-wrapper']:nth-child(4)");
+        return this.rootElement.$("[data-testid='list-name']");
     }
 }
 
