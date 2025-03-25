@@ -57,18 +57,18 @@ exports.config = {
                 args: ['-headless', '--disable-gpu', '--start-maximized']
             }
         },
-        {
-            browserName: 'firefox',
-            'moz:firefoxOptions': {
-                args: ['-headless', '--start-maximized']
-            }
-        },
-        {
-            browserName: 'MicrosoftEdge',
-            'ms:edgeOptions': {
-                args: ['--headless', '--disable-gpu', '--start-maximized']
-            }
-        }
+        // {
+        //     browserName: 'firefox',
+        //     'moz:firefoxOptions': {
+        //         args: ['-headless', '--start-maximized']
+        //     }
+        // },
+        // {
+        //     browserName: 'MicrosoftEdge',
+        //     'ms:edgeOptions': {
+        //         args: ['--headless', '--disable-gpu', '--start-maximized']
+        //     }
+        // }
     ],
     //
     // ===================
@@ -119,7 +119,7 @@ exports.config = {
     framework: 'cucumber',
     cucumberOpts: {
         require: ['./**/*.tests.js'],
-        retry: 2, 
+        retry: 0, 
         timeout: 60000, 
     },
 
