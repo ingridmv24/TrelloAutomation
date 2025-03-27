@@ -3,9 +3,19 @@ pipeline {
     
     tools {
         nodejs 'NodeJS'
+        git 'Default'
     }
     
     stages {
+        stage('Check Git Version') {
+            steps {
+                script {
+                    def gitVersion = sh(script: 'git --version', returnStdout: true).trim()
+                    echo "Git Version: ${gitVersion}"
+                }
+            }
+        }
+
         stage('Checkout') {
             steps {
                 checkout scm
