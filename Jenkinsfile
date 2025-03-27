@@ -6,6 +6,7 @@ pipeline {
         git 'Default'
     }
     
+    stages {
         stage('Checkout') {
             steps {
                 checkout scm
