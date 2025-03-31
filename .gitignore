@@ -1,5 +1,6 @@
 node_modules/
 /test-results/
 /test-result/
+reports/
 cucumber-report.html
 package-lock.json

@@ -9,7 +9,7 @@ class LoginPage extends BasePage {
     }
 
     async clickOnloginHeaderBtn(){
-        await this.header.loginHeaderBtn.waitForDisplayed();
+        await this.header.loginHeaderBtn.waitForExist({ timeout: 20000 });
         await this.header.loginHeaderBtn.click();
     }
 
