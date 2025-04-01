@@ -36,7 +36,6 @@ When('clicks on Create board', async () => {
 });
 
 When('enters a board title {string} in the Board title input field', async (title) => {
-    //const boardTitle = INPUT_VALUES.boardTitle;
     const boardTitle = title;
     await boardPage.setBoardTitle(boardTitle);
 });

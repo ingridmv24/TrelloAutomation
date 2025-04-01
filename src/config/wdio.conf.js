@@ -127,12 +127,22 @@ exports.config = {
         ["html-nice", {
             outputDir: './reports',
             filename: 'html-report.html',
-            reportTitle: 'HTML Report'
+            reportTitle: 'HTML Report',
+            linkScreenshots: true,
+            //to show the report in a browser when done
+            showInBrowser: true,
+            collapseTests: false,
+            //to turn on screenshots after every test
+            useOnAfterCommandForScreenshot: false
         }]
     ],
 
     before: function (capabilities, specs) {
         browser.maximizeWindow(); 
+    },
+
+    beforeScenario: async () => {
+        await browser.reloadSession();
     },
 
     afterTest: function (test, context, { error, result, duration, passed, retries }) {
@@ -142,7 +152,6 @@ exports.config = {
     },
 
     onComplete: function (exitCode, config, capabilities, results) {
-        // Código para ejecutar después de todas las pruebas
-        console.log('Pruebas completadas con código de salida:', exitCode);
+        console.log('Tests completed with exit code:', exitCode);
     }
 };
