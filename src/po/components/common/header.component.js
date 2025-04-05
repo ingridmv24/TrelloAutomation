@@ -1,25 +1,27 @@
 const BaseComponent = require("./base.component");
 
-class HeaderComponent extends BaseComponent{
-    constructor(){
-        super("#header[data-testid='authenticated-header']");
-    }
+class HeaderComponent extends BaseComponent {
+  constructor() {
+    super("#header[data-testid='authenticated-header']");
+  }
 
-    get loginHeaderBtn(){
-        return $("[data-uuid$='login']");
-    }
+  get loginHeaderBtn() {
+    return $("[data-uuid$='login']");
+  }
 
-    get homeBtn(){
+  get homeBtn() {
     return this.rootElement.$("a[aria-label='Back to home']");
-    }
+  }
 
-    get createMenuBtn() {
-        return this.rootElement.$("button[data-testid='header-create-menu-button']");
-    }
+  get createMenuBtn() {
+    return this.rootElement.$(
+      "button[data-testid='header-create-menu-button']",
+    );
+  }
 
-    get menuMemberBtn(){
-        return this.rootElement.$("[data-testid='header-member-menu-avatar']");
-    }
+  get menuMemberBtn() {
+    return this.rootElement.$("[data-testid='header-member-menu-avatar']");
+  }
 }
 
 module.exports = HeaderComponent;

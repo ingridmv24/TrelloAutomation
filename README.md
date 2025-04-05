@@ -10,6 +10,3 @@ This project automates https://trello.com/en website using WebDriverIO and Page 
 
 ## Execute an expecific test scenario with tag
 Run `npm run test -- --cucumberOpts.tagExpression='@tagName'`
-
-
-
