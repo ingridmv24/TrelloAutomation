@@ -24,6 +24,10 @@ Given("the user is logged in", async () => {
   await loginPage.setPassword(password);
 
   await loginPage.clickOnLogInButton();
+  
+  //Verify and handle two-step verification if it appears
+  await loginPage.handleOptionalTwoStepVerification();
+  
 });
 
 When("the user clicks on Create button", async () => {

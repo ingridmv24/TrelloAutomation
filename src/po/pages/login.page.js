@@ -38,6 +38,31 @@ class LoginPage extends BasePage {
     await this.logIn.loginButton.click();
   }
 
+  async handleOptionalTwoStepVerification() {
+    const twoStepButton = await $('button#mfa-promote-dismiss');
+
+    const twoStepButtonExists = await twoStepButton.waitForExist({ timeout: 5000, reverse: false }).catch(() => false);
+
+    if (twoStepButtonExists && await twoStepButton.isDisplayed()) {
+      await twoStepButton.waitForClickable({ timeout: 10000 });
+      await twoStepButton.click();
+      console.log('Clicked on "Continue without two-step verification".');
+
+      await browser.waitUntil(
+        async () => {
+          return await $('#header[data-testid="authenticated-header"]').isDisplayed();
+        },
+        {
+          timeout: 15000,
+          timeoutMsg: 'Authenticated header did not appear after dismissing MFA prompt'
+        }
+      );
+    } else {
+      console.log('Two-step verification prompt not found or not visible.');
+    }
+  }
+
+
   async clickOnSignUpButton() {
     await this.logIn.signupButton.waitForDisplayed();
     await this.logIn.signupButton.waitForClickable();

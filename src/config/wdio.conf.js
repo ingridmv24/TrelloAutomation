@@ -1,4 +1,5 @@
 exports.config = {
+  automationProtocol: 'webdriver',
   //
   // ====================
   // Runner Configuration
@@ -54,7 +55,8 @@ exports.config = {
     {
       browserName: "chrome",
       "goog:chromeOptions": {
-        args: ["-headless", "--disable-gpu", "--start-maximized"],
+        //args: ["--headless=new", "--disable-gpu", "--window-size=1920,1080"],
+        args: ["--disable-gpu", "--start-maximized"],
       },
     },
     // {

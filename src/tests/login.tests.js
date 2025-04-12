@@ -40,6 +40,8 @@ Given("enters {string} in the password field", async (passwordKey) => {
 
 Given("the user clicks on the login button", async () => {
   await loginPage.clickOnLogInButton();
+  //Verify and handle two-step verification if it appears
+  await loginPage.handleOptionalTwoStepVerification();
 });
 
 When("the user clicks on the sign up button", async () => {
