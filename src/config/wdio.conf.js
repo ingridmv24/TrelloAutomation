@@ -55,8 +55,8 @@ exports.config = {
     {
       browserName: "chrome",
       "goog:chromeOptions": {
-        //args: ["--headless=new", "--disable-gpu", "--window-size=1920,1080"],
-        args: ["--disable-gpu", "--start-maximized"],
+        args: ["--headless=new", "--disable-gpu", "--start-maximized"],
+        //args: ["--disable-gpu", "--start-maximized"],
       },
     },
     // {
