@@ -55,7 +55,7 @@ exports.config = {
     {
       browserName: "chrome",
       "goog:chromeOptions": {
-        args: ["--headless=new", "--disable-gpu", "--start-maximized"],
+        args: ["--headless=new", "--disable-gpu", "--window-size=1920,1080"],
         //args: ["--disable-gpu", "--start-maximized"],
       },
     },
@@ -144,8 +144,11 @@ exports.config = {
   ],
 
   before: function (capabilities, specs) {
-    browser.maximizeWindow();
+    if (!browser.capabilities['goog:chromeOptions']?.args?.includes('--headless')) {
+      browser.maximizeWindow();
+    }
   },
+
 
   beforeScenario: async () => {
     await browser.reloadSession();

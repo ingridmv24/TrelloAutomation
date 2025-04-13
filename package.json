@@ -6,6 +6,10 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run src/config/wdio.conf.js",
+    "test:login": "wdio run src/config/wdio.conf.js --cucumberOpts.tagExpression='@login'",
+    "test:boardList": "wdio run src/config/wdio.conf.js --cucumberOpts.tagExpression='@boardList'",
+    "test:board": "wdio run src/config/wdio.conf.js --cucumberOpts.tagExpression='@board'",
+    "test:profile": "wdio run src/config/wdio.conf.js --cucumberOpts.tagExpression='@profile'",
     "lint": "eslint . --ext .js,.mjs,.cjs",
     "format": "prettier --write ."
   },

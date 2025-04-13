@@ -3,6 +3,7 @@ Feature: Board Management
 Background:
 Given the user is logged in
 
+@board
 @createNewBoard
 Scenario: Create a new board
     When the user clicks on Create button
@@ -11,6 +12,7 @@ Scenario: Create a new board
     And clicks on the Create submit button
     Then the new board title should be displayed
 
+@board
 @createBoardWithoutName
 Scenario: Create a board without a name
     When the user clicks on Create button

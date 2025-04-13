@@ -3,6 +3,7 @@ Feature: User Profile Management
 Background:
 Given the user is logged in
 
+@profile
 @editProfile
 Scenario: Edit user profile
     When the user clicks on the profile icon
