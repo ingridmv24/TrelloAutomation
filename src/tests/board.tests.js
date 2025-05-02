@@ -24,10 +24,10 @@ Given("the user is logged in", async () => {
   await loginPage.setPassword(password);
 
   await loginPage.clickOnLogInButton();
-  
+
   //Verify and handle two-step verification if it appears
   await loginPage.handleOptionalTwoStepVerification();
-  
+
 });
 
 When("the user clicks on Create button", async () => {
@@ -53,7 +53,19 @@ When("clicks on the Create submit button", async () => {
 Then("the new board title should be displayed", async () => {
   const actualBoardName = await boardPage.extractBoardTitleText();
   const expectedBoardName = TITLES_VALIDATION.boardTitle;
-  expect(actualBoardName).to.equals(expectedBoardName);
+
+  //expect validation Chai
+  await expect(actualBoardName).to.equals(expectedBoardName);
+
+  //should validation
+  actualBoardName.should.equal(expectedBoardName);
+
+  //assert validation WebdriverIO/Jest
+  await expect(actualBoardName).toEqual(expectedBoardName);
+
+  //integrated WDIO assertion
+  assert.strictEqual(actualBoardName, expectedBoardName);
+
 });
 
 When("leaves the board name empty", async () => {
@@ -64,5 +76,16 @@ Then("an validation message should be displayed", async () => {
   const boardTitleValidarionText =
     await boardPage.extractBoardTitleValidation();
   const expectedBoardTitleValidationText = MESSAGES.boardTitleValidationMessage;
+
+  //expect validation
   expect(boardTitleValidarionText).to.equal(expectedBoardTitleValidationText);
+
+  //should validation
+  boardTitleValidationText.should.equal(expectedBoardTitleValidationText);
+
+  //Node.js assertion
+  assert.strictEqual(boardTitleValidationText, expectedBoardTitleValidationText);
+
+  //integrated WDIO assertion
+  await expect(boardTitleValidationText).toEqual(expectedBoardTitleValidationText);
 });

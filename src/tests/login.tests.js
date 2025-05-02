@@ -51,11 +51,27 @@ When("the user clicks on the sign up button", async () => {
 Then("the user should be redirected to the board", async () => {
   await workSpacePage.waitForWorkSpaceTitle();
   const isTitleVisible = await workSpacePage.isUserLoggedIn();
+
+  //expect validation
   expect(isTitleVisible).to.be.true;
+
+  //should validation
+  isTitleVisible.should.be.true;
+
+  //assert validation
+  assert.strictEqual(isTitleVisible, true);
 });
 
 Then("the user should see an error message", async () => {
   const actualErrorMessage = await loginPage.extractInvalidEmailText();
   const expectedErrorMessage = MESSAGES.errorInvalidEmail;
+
+  //expect validation
   expect(actualErrorMessage).to.equals(expectedErrorMessage);
+
+  //should validation
+  actualErrorMessage.should.equal(expectedErrorMessage);
+
+  //assert validation
+  assert.strictEqual(actualErrorMessage, expectedErrorMessage);
 });

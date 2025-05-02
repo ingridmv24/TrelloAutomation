@@ -25,5 +25,17 @@ When("the user clicks on save button", async () => {
 Then("a success message is displayed", async () => {
   const actualAlertBioInfo = await accountPage.getAlertInfoSaved();
   const expectedAlertBioInfo = MESSAGES.alertTextBioInfo;
-  expect(actualAlertBioInfo).to.deep.equal(expectedAlertBioInfo);
+
+  //expect Chai
+  expect(actualAlertBioInfo).to.equal(expectedAlertBioInfo);
+  expect(actualAlertBioInfo).to.deep.equal(expectedAlertBioInfo)
+
+  //should validation
+  actualAlertBioInfo.should.equal(expectedAlertBioInfo);
+
+  //validation with WDIO integrated
+  await expect(actualAlertBioInfo).toBe(expectedAlertBioInfo);
+
+  //Node.js assertion
+  assert.strictEqual(actualAlertBioInfo, expectedAlertBioInfo);
 });

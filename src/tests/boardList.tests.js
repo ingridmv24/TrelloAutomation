@@ -24,8 +24,22 @@ When("clicks on Add list button", async () => {
 Then("the new list should be added successfully", async () => {
   const actualBoardListName = await boardPage.extractNewListBoardTitle();
   const expectedBoardListName = testData.TITLES_VALIDATION.boardListName;
+
+  //expect validation
   expect(actualBoardListName).to.include(
     expectedBoardListName,
     `Expected list name to include "${expectedBoardListName}" but found "${actualBoardListName}"`,
+  );
+
+  //should validation
+  actualBoardListName.should.include(
+    expectedBoardListName,
+    `Expected list name to include "${expectedBoardListName}" but found "${actualBoardListName}"`
+  );
+
+  //assert validation
+  assert.ok(
+    actualBoardListName.includes(expectedBoardListName),
+    `Expected list name to include "${expectedBoardListName}" but found "${actualBoardListName}"`
   );
 });
